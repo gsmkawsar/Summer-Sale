@@ -42,7 +42,7 @@
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod1.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" checked />
@@ -59,7 +59,7 @@
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod2.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -76,7 +76,7 @@
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod3.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -93,13 +93,13 @@
     
               <h2 class="text-2xl font-bold my-10">Sportswear</h2>
     
-            <div class=" grid lg:grid-cols-3 gap-4 justify-items-center">
+            <div class=" grid lg:grid-cols-3 gap-4 justify-items-center ">
               <!-- card 4   -->
               <div class="card w-56 bg-base-100 shadow-xl mb-3">
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod4.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -116,7 +116,7 @@
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod5.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -133,7 +133,7 @@
                 <figure class=" bg-slate-200 p-5">
                   <img src="/images/prod6.png" alt="Shoes" class="rounded-xl" />
                 </figure>
-                <div class=" mt-3 items-center text-center">
+                <div onclick="itemClick(this)" class=" mt-3 items-center text-center cursor-pointer">
                     <div class="rating">
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
@@ -157,30 +157,26 @@
         <div>
             <h2 class="text-2xl font-bold mb-4">Have coupon?</h2>
             <div class="flex mb-3 border-slate-400">
-                <input class="border-slate-800" type="text">
-                <button class="bg-[#E527B2] text-white font-semibold py-2 px-6">Apply</button>
+                <input class="border-slate-800 pl-4" type="text" placeholder="Coupon Code">
+                <button id="applyCopse" class="bg-[#E527B2] text-white font-semibold py-2 px-6" disabled>Apply</button>
             </div>
+            <div id="selectItem">
 
+            </div>
             <hr>
-            <p class="text-xl my-3">Total price: 257.00TK</p>
-            <p class="text-xl my-3">Discount : 51.40TK</p>
-            <p class="text-xl my-3">Total: 205.60 TK</p>
+            <p class="my-2">Total price: <span id="totalPrice">00</span>TK</p>
+            <p class="my-2">Discount : 00TK</p>
+            <p class="my-2">Total: 00TK</p>
             <hr>
-            <button class="bg-[#E527B2] text-white font-semibold py-2 px-6 mt-3">Make Purchase</button>
+            <button id="btnPurchase" class="bg-[#E527B2] text-white font-semibold py-2 px-6 mt-3" disabled >Make Purchase</button>
         </div>
         <!-- Have coupon? end -->
        </section>
-
-
-
-
-
-
-
 
          </div>
 
     </main>
     
+    <script src="./shop.js"></script>
 </body>
 </html>
