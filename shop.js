@@ -24,42 +24,45 @@ function itemClick(target){
     totalPrice.innerText = price;
     finalPrice.innerText = price;
 
+    const discountFinal = price * discount/100;
+    const totalFinal = price - discountFinal;
 
 
 
     if(price > 0) {
         btnPurchase.removeAttribute('disabled') 
+      
     }
 
     if( price >= 200  ){
 
         applyCopse.removeAttribute('disabled')
-       
+ 
     }
 
-
+ 
 
     document.getElementById('applyCopse').addEventListener('click', function(){
-      
-    const couponValue = document.getElementById('coupon')
-    const coupon = couponValue.value;
 
-    if ( "SELL200" != coupon ){
-        alert('invalid Coupon')
-        return
-    }
+        
+        const couponValue = document.getElementById('coupon').value;
+        
 
+        if(" " > couponValue){
+            alert('Please Type Coupon');
+            return;
+        }
+    
+         else if ( "SELL200" != couponValue ){
+            alert('invalid Coupon');
+            return;
+        }
 
-
-    const discountFinal = price * discount/100;
-    const totalFinal = price - discountFinal;
-
-    discountPrice.innerText = discountFinal;
-    finalPrice.innerText = totalFinal;
-
-
+        discountPrice.innerText = discountFinal;
+        finalPrice.innerText = totalFinal;
 
     })
+
 
     document.getElementById('homeBtn').addEventListener('click', function(){
 
@@ -69,8 +72,6 @@ function itemClick(target){
         selectItem.innerHTML = "";
         applyCopse.setAttribute('disabled', true)
         btnPurchase.setAttribute('disabled', true)
-
-
 
     })
 
