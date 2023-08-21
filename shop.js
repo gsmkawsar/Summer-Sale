@@ -63,11 +63,12 @@ function itemClick(target){
 
     document.getElementById('homeBtn').addEventListener('click', function(){
 
-        
         discountPrice.innerText = 0;
         finalPrice.innerText = 0;
         totalPrice.innerText = 0;
-        selectItem.style = 'none'
+        selectItem.style.display = 'none'
+        applyCopse.setAttribute('disabled', true)
+        btnPurchase.setAttribute('disabled', true)
 
     })
 
