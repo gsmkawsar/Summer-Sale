@@ -3,11 +3,6 @@ const discount =20;
 const discountPrice = document.getElementById('discount'); 
 const finalPrice = document.getElementById('total')
 
-
-
-
-
-
 function itemClick(target){
     const selectItem = document.getElementById('selectItem')
     const itemName = (target.childNodes[3].innerText);
@@ -30,12 +25,6 @@ function itemClick(target){
     finalPrice.innerText = price;
 
 
-    const discountFinal = price * discount/100;
-    const totalFinal = price - discountFinal;
-
-
-
-
 
 
     if(price > 0) {
@@ -45,28 +34,41 @@ function itemClick(target){
     if( price >= 200  ){
 
         applyCopse.removeAttribute('disabled')
-        return
+       
     }
+
 
 
     document.getElementById('applyCopse').addEventListener('click', function(){
       
-        const couponValue = document.getElementById('coupon')
-        const coupon = couponValue.value;
+    const couponValue = document.getElementById('coupon')
+    const coupon = couponValue.value;
 
-        if ( "SELL200" != coupon ){
+    if ( "SELL200" != coupon ){
+        alert('invalid Coupon')
+        return
+    }
 
-            alert('invalid Coupon')
-            return
-        }
-          
-    
-        discountPrice.innerText = discountFinal;
-        finalPrice.innerText = totalFinal;
-    
+
+
+    const discountFinal = price * discount/100;
+    const totalFinal = price - discountFinal;
+
+    discountPrice.innerText = discountFinal;
+    finalPrice.innerText = totalFinal;
+
+
 
     })
-  
+
+    document.getElementById('homeBtn').addEventListener('click', function(){
+
+        
+        discountPrice.innerText = 0;
+        finalPrice.innerText = 0;
+        totalPrice.innerText = 0;
+        selectItem.style = 'none'
+
+    })
 
 }
-    
