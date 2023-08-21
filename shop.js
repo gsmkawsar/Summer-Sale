@@ -66,9 +66,11 @@ function itemClick(target){
         discountPrice.innerText = 0;
         finalPrice.innerText = 0;
         totalPrice.innerText = 0;
-        selectItem.style.display = 'none'
+        selectItem.innerHTML = "";
         applyCopse.setAttribute('disabled', true)
         btnPurchase.setAttribute('disabled', true)
+
+
 
     })
 
