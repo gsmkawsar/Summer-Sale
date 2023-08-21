@@ -29,7 +29,7 @@
 
     
 
-       <section class=" lg:flex lg:justify-between">
+       <section class=" lg:flex lg:justify-between ">
 
         <!-- item contents start-->
 
@@ -51,7 +51,7 @@
                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-orange-400" />
                       </div>
                   <h2 class="font-bold">K. Accessories</h2>
-                  <p>39.00 TK</p>
+                  <p>100.00 TK</p>
                 </div>
               </div>
               <!-- card 2 -->
@@ -157,18 +157,38 @@
         <div>
             <h2 class="text-2xl font-bold mb-4">Have coupon?</h2>
             <div class="flex mb-3 border-slate-400">
-                <input class="border-slate-800 pl-4" type="text" placeholder="Coupon Code">
-                <button id="applyCopse" class="bg-[#E527B2] text-white font-semibold py-2 px-6" disabled>Apply</button>
+                <input id="coupon" class="border-slate-800 pl-4" type="text" placeholder="Coupon Code">
+                <button id="applyCopse" class="bg-[#E527B2]  text-white font-semibold py-2 px-6 disabled:bg-slate-400" disabled >Apply</button>
             </div>
-            <div id="selectItem">
+            <ol id="selectItem">
 
-            </div>
+            </ol>
             <hr>
             <p class="my-2">Total price: <span id="totalPrice">00</span>TK</p>
-            <p class="my-2">Discount : 00TK</p>
-            <p class="my-2">Total: 00TK</p>
+            <p class="my-2">Discount : <span id="discount">00</span>TK</p>
+            <p class="my-2">Total: <span id="total">00</span>TK</p>
             <hr>
-            <button id="btnPurchase" class="bg-[#E527B2] text-white font-semibold py-2 px-6 mt-3" disabled >Make Purchase</button>
+            <button onclick="my_modal_5.showModal()" id="btnPurchase" class="bg-[#E527B2] text-white font-semibold py-2 px-6 mt-3 rounded-lg disabled:bg-slate-400" disabled >Make Purchase</button>
+
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box text-center place-items-center ">
+              <div>
+                <div>
+                  <img src="./images/congo.png" alt="">
+                </div>
+                  <h3 class="font-bold text-lg">Congratulations</h3>
+                  <p class="py-4">Your Purchase the product</p>
+                  <div class="justify-center">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button  class="bg-[#E527B2] text-white font-semibold py-2 px-6 mt-3 rounded-lg" >Go Home</button>
+                  </div>
+              </div>
+            </form>
+            </dialog>
+
+
+
+            
         </div>
         <!-- Have coupon? end -->
        </section>
